@@ -10,3 +10,4 @@ static
 wsgiref
 django-static-precompiler
 six
+django-sampledatahelper

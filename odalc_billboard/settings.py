@@ -7,7 +7,6 @@ IS_PROD = 'IS_PROD' in os.environ
 IS_HEROKU = IS_STAGE or IS_PROD
 DEBUG = not IS_PROD
 TEMPLATE_DEBUG = not IS_PROD
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 PROJECT_ROOT = os.path.abspath(
