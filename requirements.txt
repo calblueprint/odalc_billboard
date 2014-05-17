@@ -3,6 +3,7 @@ argparse
 dj-database-url
 dj-static
 django-toolbelt
+django-less
 gunicorn
 psycopg2
 pystache
