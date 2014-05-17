@@ -1,11 +1,87 @@
-#header {
-  h1 {
-    font-size: 26px;
-    font-weight: bold;
-  }
-  p { font-size: 12px;
-    a { text-decoration: none;
-      &:hover { border-width: 1px }
-    }
-  }
+//colors
+@yellow: rgb(200, 143, 42);
+
+
+//css
+body {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin: 0;
+}
+
+
+#header {	
+	border-bottom: 1px solid gray;
+	padding: 20px;
+	#prompt {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	#question {
+	  font-size: 26px;	  
+	  .oakland {
+		  font-weight: 600;
+		}
+	}
+}
+
+#input-box {
+	padding: 20px;
+	border-bottom: 1px solid gray;
+	#message {
+		width: 80%;
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	input#submit{
+		display: block;
+	  background:none;
+	  border: 0;
+	  border-radius: 0;
+	  padding: 8px 15px;
+	  margin: 10px auto;
+	  font-size: 16px;
+	  background-color: @yellow;
+	  color: white;
+	  // color:blue;
+	}
+}
+
+#posts {
+	padding: 20px 10px 0;
+	text-align: center;
+	.post {
+		max-width: 400px;
+		display: table;
+		margin: auto;
+		border: 1px solid gray;
+		margin-bottom: 20px;
+		.points-section {
+			display: table-cell;
+			width: 80px;
+			.points {
+				padding: 5px;
+			}
+			.vote-buttons {
+				display: table;
+				width: 100%;
+				.vote-button {
+					border-top: 1px solid gray;
+					display: table-cell;
+					padding: 5px;
+					width: 50%;
+					font-size: 20px;
+				}
+			}
+		}
+		.text-section {
+			display: table-cell;
+			border-left: 1px solid gray;
+			position: relative;
+			.text {
+			}
+		}
+	}
+
 }

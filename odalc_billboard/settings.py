@@ -5,6 +5,7 @@ import dj_database_url
 IS_STAGE = 'IS_STAGE' in os.environ
 IS_PROD = 'IS_PROD' in os.environ
 IS_HEROKU = IS_STAGE or IS_PROD
+
 DEBUG = not IS_PROD
 TEMPLATE_DEBUG = not IS_PROD
 
