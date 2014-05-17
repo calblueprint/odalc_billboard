@@ -33,39 +33,27 @@
     </div>
 
     <div id="posts">
-      <div class="post">
-        <div class="points-section">
-          <div class="points">375</div>
-          <div class="vote-buttons">
-            <div class="vote-button">+</div>
-            <div class="vote-button">-</div>
-          </div>          
-        </div>
-        <div class="text-section">
-          <div class="text">
-            Inspire Oakland inspires me. Food inspires me.
+      {% for i in "xxxxxxxxxx" %}
+        <div class="post">
+          <div class="points-section">
+            <div class="points">375</div>
+            <div class="vote-buttons">
+              <div class="vote-button">+</div>
+              <div class="vote-button">-</div>
+            </div>          
+          </div>
+          <div class="text-section">
+            <div class="text">
+              Inspire Oakland inspires me. Food inspires me.
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="post">
-        <div class="points-section">
-          <div class="points">375</div>
-          <div class="vote-buttons">
-            <div class="vote-button">+</div>
-            <div class="vote-button">-</div>
-          </div>          
-        </div>
-        <div class="text-section">
-          <div class="text">
-            Inspire Oakland inspires me. Food inspires me.
-          </div>
-        </div>
-      </div>
-      
+      {% endfor %}
     </div>
 
-
+    <div id="footer">
+      ODALC
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
