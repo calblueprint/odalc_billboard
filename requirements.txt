@@ -1,0 +1,10 @@
+Django
+argparse
+dj-database-url
+dj-static
+django-toolbelt
+gunicorn
+psycopg2
+pystache
+static
+wsgiref
