@@ -5,6 +5,8 @@ import dj_database_url
 IS_STAGE = 'IS_STAGE' in os.environ
 IS_PROD = 'IS_PROD' in os.environ
 IS_HEROKU = IS_STAGE or IS_PROD
+DEBUG = not IS_PROD
+TEMPLATE_DEBUG = not IS_PROD
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -100,10 +102,13 @@ STATICFILES_FINDERS = (
     'static_precompiler.finders.StaticPrecompilerFinder',
 )
 
+if IS_HEROKU:
+    STATIC_PRECOMPILER_ROOT = STATIC_ROOT
+else:
+    STATIC_PRECOMPILER_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'a9s(3*(&amp;+d*2!crht==%#vityoz2j5zemyc7^$i%05r6t^+v&amp;k'
-
-
 
 ROOT_URLCONF = 'odalc_billboard.urls'
 
