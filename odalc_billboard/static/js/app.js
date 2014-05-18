@@ -37,15 +37,17 @@ $(document).ready(function() {
         };
 
       // TODO: AJAX CALL TO UPDATE POINTS
+        $(this).toggleClass('clicked');
         $.ajax({
             type: 'POST',
             url: 'vote/',
             data: {
                 'diff': diff,
-                'postId': postId
+                'postId': postId,
+                'isDownClicked': false,
+                'isUpClicked': $(this).hasClass('clicked')
             },
         });
-        $(this).toggleClass('clicked');
     });
 
     $(".vote-down").click(function(){
@@ -67,14 +69,16 @@ $(document).ready(function() {
             pointElement.text(points - 1);
             diff = -1;
         };
+        $(this).toggleClass('clicked');
         $.ajax({
             type: 'POST',
             url: 'vote/',
             data: {
                 'diff': diff,
-                'postId': postId
+                'postId': postId,
+                'isDownClicked': $(this).hasClass('clicked'),
+                'isUpClicked': false
             },
         });
-        $(this).toggleClass('clicked');
     });
 });
