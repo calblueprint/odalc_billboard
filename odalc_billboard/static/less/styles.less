@@ -18,6 +18,7 @@ body {
 
 #input-box {
 	padding: 0px 20px;
+	position: relative;
 	#message {
 		width: 80%;
 		font-size: 15px;
@@ -25,6 +26,14 @@ body {
 		margin-top: 20px;
 		text-align: center;
 		border: 1px solid rgb(220, 220, 220);
+
+		@media all and (max-width: 420px) {
+			width: 100%;
+			box-sizing: border-box;
+			// margin-left: 10px;
+			// padding-left: 0;
+			// padding: 0;
+		}
 	}
 
 	input#submit{
@@ -38,9 +47,9 @@ body {
 	  background-color: @yellow;
 	  color: white;
 	  cursor: pointer;
-	  &:hover {
-	  	opacity: 0.8;
-	  }
+	  // &:hover {
+	  // 	opacity: 0.8;
+	  // }
 	}
 }
 
@@ -80,10 +89,11 @@ body {
 		.text-section {
 			width: 330px;
 			@media all and (max-width: 420px) {
-				width: 250px;
+				font-size: 13px;
 				width: calc(100% - 35px);
 				width: -webkit-calc(100% - 35px);
 				width: -moz-calc(100% - 35px);
+				width: 75%;
 			}
 			padding: 12px 12px;
 			box-sizing: border-box;
