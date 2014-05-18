@@ -1,6 +1,32 @@
 #header {	
-	border-bottom: 1px solid gray;
-	padding: 20px;
+	border-bottom: 1px solid gray;	
+	background-image:url('../media/billboard_1.jpg');
+	background-size: cover;
+	width: 100%;
+	color: white;
+	text-shadow: 0px 0px 1px black;
+	position: relative;
+	.overlay {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background-color: black;
+		opacity: 0.4;
+	}
+	.overlay-text {
+		text-align: center;
+		// width: 100%;
+		padding: 25px 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+	}
+	.overlay-text-2 {
+		visibility: hidden;
+		padding: 25px 20px;
+	}
 	#prompt {
 		font-size: 14px;
 		margin-bottom: 10px;
