@@ -13,5 +13,12 @@ class Command(BaseCommand):
     md = ModelDataHelper()
 
     def handle(self, *args, **options):
+        instances = 20
+        for x in range(instances):
+            submission = Submission(
+                content=self.sd.sentence(),
+                points=self.sd.int(min_value=-20, max_value=20),
+                submitted=self.sd.past_datetime(0, 10000)
+            )
+            submission.save()
         print 'Generating submissions...'
-        self.md.fill_model(Submission, 20)
