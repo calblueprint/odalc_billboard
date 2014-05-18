@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load less %}
+{% load template_extras %}
 
 <!doctype html>
 <html lang="en">
@@ -61,6 +62,7 @@
 
     <div id="posts">
       {% for submission in submissions %}
+        {% with post_state=request.session|get_session:submission.id %}
         <div id="{{ submission.id }}" class="post">
           <div class="ribbon">
             {{ submission.points }}
@@ -74,13 +76,14 @@
           </div>
           <div class="vote-section">
             <div class="vote-button">
-              <i class="fa fa-thumbs-up vote-up" id="{{ submission.id }}_up"></i>
+              <i class="fa fa-thumbs-up vote-up {% if post_state == 1 %}clicked{% endif %}" id="{{ submission.id }}_up"></i>
             </div>
             <div class="vote-button">
-              <i class="fa fa-thumbs-down vote-down" id="{{ submission.id }}_down"></i>
+              <i class="fa fa-thumbs-down vote-down {% if post_state == -1 %}clicked{% endif %}" id="{{ submission.id }}_down"></i>
             </div>
           </div>
         </div>
+        {% endwith %}
       {% endfor %}
     </div>
 

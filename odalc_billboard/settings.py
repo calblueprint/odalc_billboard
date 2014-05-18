@@ -79,7 +79,7 @@ LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
-USE_I18N = True
+USE_I18N = False
 USE_L10N = True
 USE_TZ = True
 
@@ -116,7 +116,6 @@ ROOT_URLCONF = 'odalc_billboard.urls'
 WSGI_APPLICATION = 'odalc_billboard.wsgi.application'
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',

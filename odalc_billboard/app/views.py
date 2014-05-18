@@ -54,7 +54,17 @@ class AJAXVoteView(View):
     def post(self, request, *args, **kwargs):
         submission_id = request.POST.get('postId')
         diff = int(request.POST.get('diff'))
+        is_up = request.POST.get('isUpClicked') == 'true'
+        is_down = request.POST.get('isDownClicked') == 'true'
         submission = Submission.objects.get(id=submission_id)
         submission.points = submission.points + diff
         submission.save()
+        if is_up:
+            request.session[str(submission.id)] = 1
+        elif is_down:
+            request.session[str(submission.id)] = -1
+        else:
+            request.session.pop(str(submission.id), None)
+        request.session.modified = True
+        print request.session.items()
         return HttpResponse('')
