@@ -50,12 +50,12 @@
 
     <div id="posts">
       {% for submission in submissions %}
-        <div class="post">
+        <div id="{{ submission.id }}" class="post">
           <div class="points-section">
             <div class="points">{{ submission.points }}</div>
             <div class="vote-buttons">
-              <div class="vote-button">+</div>
-              <div class="vote-button">-</div>
+              <div class="vote-button"><button class="vote-up" type="button" id="{{ submission.id }}_up">+</button></div>
+              <div class="vote-button"><button class="vote-down" type="button" id="{{ submission.id }}_down">-</button></div>
             </div>
           </div>
           <div class="text-section">
@@ -73,5 +73,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{% static "js/app.js" %}"></script>
   </body>
 </html>

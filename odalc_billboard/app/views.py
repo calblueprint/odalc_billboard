@@ -1,5 +1,8 @@
+import json
+
+from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 
 from odalc_billboard.app.models import Submission
 from odalc_billboard.app.forms import SubmissionForm
@@ -45,3 +48,15 @@ class IndexView(TemplateView):
         else:
             context['submission_form'] = SubmissionForm()
         return context
+
+
+class AJAXVoteView(View):
+    def get(self, request, *args, **kwargs):
+        print "got a get request"
+        content = json.dumps({})
+        return HttpResponse(content, content_type='text/plain; charset=x-user-defined')
+
+    def post(self, request, *args, **kwargs):
+        print "got a post request"
+        content = json.dumps({})
+        return HttpResponse(content, content_type='text/plain; charset=x-user-defined')
