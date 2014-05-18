@@ -35,5 +35,8 @@ class Submission(models.Model):
 
     objects = SubmissionManager()
 
+    def __unicode__(self):
+        return 'ID %d @ %s | %d POINTS' % (self.id, self.submitted, self.points)
+
     class Meta:
         ordering = ['-submitted']

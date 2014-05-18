@@ -51,12 +51,10 @@ class IndexView(TemplateView):
 
 
 class AJAXVoteView(View):
-    def get(self, request, *args, **kwargs):
-        print "got a get request"
-        content = json.dumps({})
-        return HttpResponse(content, content_type='text/plain; charset=x-user-defined')
-
     def post(self, request, *args, **kwargs):
-        print "got a post request"
-        content = json.dumps({})
-        return HttpResponse(content, content_type='text/plain; charset=x-user-defined')
+        submission_id = request.POST.get('postId')
+        diff = int(request.POST.get('diff'))
+        submission = Submission.objects.get(id=submission_id)
+        submission.points = submission.points + diff
+        submission.save()
+        return HttpResponse('')
