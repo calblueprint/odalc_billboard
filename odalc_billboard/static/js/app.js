@@ -18,10 +18,10 @@ $(document).ready(function() {
 
     $(".vote-up").click(function(){
         var postId = $(this).closest('.post').attr('id');
-        var downVoteElement = $(this).closest('.vote-buttons').find('.vote-down')
+        var downVoteElement = $(this).closest('.vote-section').find('.vote-down')
         var isUpClicked = $(this).hasClass('clicked');
         var isDownClicked = downVoteElement.hasClass('clicked');
-        var pointElement = $(this).closest('.points-section').children('.points')
+        var pointElement = $(this).closest('.post').children('.ribbon')
         var points = parseInt(pointElement.text());
         var diff = 0;
         if (isUpClicked) {
@@ -50,10 +50,10 @@ $(document).ready(function() {
 
     $(".vote-down").click(function(){
         var postId = $(this).closest('.post').attr('id');
-        var upVoteElement = $(this).closest('.vote-buttons').find('.vote-up')
+        var upVoteElement = $(this).closest('.vote-section').find('.vote-up')
         var isDownClicked = $(this).hasClass('clicked');
         var isUpClicked = upVoteElement.hasClass('clicked');
-        var pointElement = $(this).closest('.points-section').children('.points')
+        var pointElement = $(this).closest('.post').children('.ribbon')
         var points = parseInt(pointElement.text());
         var diff = 0;
         if (isDownClicked) {
