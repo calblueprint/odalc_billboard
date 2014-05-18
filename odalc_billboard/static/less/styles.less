@@ -1,22 +1,30 @@
 @import "_header.less";
 @import "_footer.less";
+@import "_ribbon.less";
 
 @yellow: rgb(200, 143, 42);
+@purple: #383a85;
+@gray: #8c8c8c;
+@light_gray: #f1f2f0;
+@green: #137A0F;
 
 body {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	margin: 0;
-	padding-bottom: 50px;
+	padding-bottom: 60px;
+	background-color: @light_gray;
 }
 
 #input-box {
-	padding: 20px;
-	// border-bottom: 1px solid gray;
+	padding: 0px 20px;
 	#message {
 		width: 80%;
-		font-size: 14px;
-		padding: 5px;
+		font-size: 15px;
+		padding: 10px;
+		margin-top: 20px;
+		text-align: center;
+		border: 1px solid rgb(220, 220, 220);
 	}
 
 	input#submit{
@@ -25,11 +33,14 @@ body {
 	  border: 0;
 	  border-radius: 0;
 	  padding: 8px 15px;
-	  margin: 10px auto;
-	  font-size: 16px;
+	  margin: 10px auto 0;
+	  font-size: 15px;
 	  background-color: @yellow;
 	  color: white;
-	  // color:blue;
+	  cursor: pointer;
+	  &:hover {
+	  	opacity: 0.8;
+	  }
 	}
 }
 
@@ -37,34 +48,59 @@ body {
 	padding: 20px 10px 0;
 	text-align: center;
 	.post {
-		max-width: 400px;
-		display: table;
+		background-color: white;
+		width: 400px;
 		margin: auto;
-		border: 1px solid gray;
+		border-radius: 5px;
 		margin-bottom: 20px;
+		position: relative;
+		min-height: 64px;
+
+		@media all and (max-width: 420px) {
+			width: 100%;
+		}
 		.points-section {
-			display: table-cell;
-			width: 80px;
-			.points {
-				padding: 5px;
-			}
-			.vote-buttons {
-				display: table;
+			display: inline-block;
+			width: 15px;
+			box-sizing: border-box;
+			.vote-buttons {				
 				width: 100%;
 				.vote-button {
 					border-top: 1px solid gray;
-					display: table-cell;
 					padding: 5px;
 					width: 50%;
 					font-size: 20px;
+					cursor: pointer;
+					&:hover {
+						color: @yellow;
+					}
 				}
 			}
 		}
 		.text-section {
-			display: table-cell;
-			border-left: 1px solid gray;
-			position: relative;
-			.text {
+			width: 330px;
+			@media all and (max-width: 420px) {
+				width: 250px;
+				width: calc(100% - 35px);
+				width: -webkit-calc(100% - 35px);
+				width: -moz-calc(100% - 35px);
+			}
+			padding: 12px 12px;
+			box-sizing: border-box;
+			display: inline-block;
+			font-size: 14px;
+		}
+		.vote-section {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 3px;
+			width: 20px;
+			font-size: 22px;
+			.vote-button {
+				cursor: pointer;
+				color: @gray;
+				.fa-thumbs-up:hover { color: @green; }
+				.fa-thumbs-down:hover { color: rgb(209, 24, 24); }
 			}
 		}
 	}

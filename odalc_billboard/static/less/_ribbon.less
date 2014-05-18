@@ -1,0 +1,26 @@
+.ribbon {
+	// background-color: @yellow;
+	background-color: #ffc652;
+	position: absolute;
+	width: 28px;
+	padding-top: 4px;
+	text-align: center;
+	top: -2px;
+	left: 10px;
+	height: 38px;
+	font-size: 14px;	
+	font-weight: 500;
+	&:before {
+		content: " ";
+		display: block;
+		height: 0;
+		width: 0;
+		border-style: solid;
+		border-width: 14px;
+		border-color: transparent;
+		left: 0;
+		border-bottom-color: white;
+		position: absolute;
+		bottom: -1px;
+	}
+}

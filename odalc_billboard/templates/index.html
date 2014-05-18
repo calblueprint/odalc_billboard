@@ -9,6 +9,7 @@
     <title>Oakland Digital</title>
 
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" />
     <link rel="stylesheet" href="{{ STATIC_URL }}{% less "less/styles.less" %}" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
   </head>
@@ -23,9 +24,31 @@
         <div id="question">
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
+        <div id="input-box">
+          <form method="POST">
+            {% csrf_token %}
+            {% for error in submission_form.content.errors %}
+              <div><small class="error">{{ error }}</small><div>
+            {% endfor %}
+            {# Below is a manually rendered version of using 'submission_form.content' #}
+            <textarea id="message" name="content" placeholder="Let the world know your answer!"></textarea>
+            <input type="submit" value="Submit" id="submit" name="_submission"/>
+          </form>
+        </div>
       </div>
 
+      <!--LOL HACK-->
       <div class="overlay-text-2">
+        <div id="input-box">
+          <form method="POST">
+            {% csrf_token %}
+            {% for error in submission_form.content.errors %}
+              <div><small class="error">{{ error }}</small><div>
+            {% endfor %}
+            <textarea id="message" name="" placeholder="Let the world know your answer!"></textarea>
+            <input type="submit" value="Submit" id="submit">
+          </form>
+        </div>
         <div id="prompt">
           Each year, ODALC asks graphic design students to design a billboard that answers the question
         </div>
@@ -33,42 +56,37 @@
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
       </div>
-
     </div>
 
-    <div id="input-box">
-      <form method="POST">
-        {% csrf_token %}
-        {% for error in submission_form.content.errors %}
-          <div><small class="error">{{ error }}</small><div>
-        {% endfor %}
-        {# Below is a manually rendered version of using 'submission_form.content' #}
-        <textarea id="message" name="content"></textarea>
-        <input type="submit" value="Let the world know your answer" id="submit" name="_submission"/>
-      </form>
-    </div>
-
-    <div id="posts">
+    <div id="posts">      
       {% for submission in submissions %}
         <div class="post">
+          <div class="ribbon">
+            {{ submission.points }}
+          </div>
           <div class="points-section">
-            <div class="points">{{ submission.points }}</div>
-            <div class="vote-buttons">
-              <div class="vote-button">+</div>
-              <div class="vote-button">-</div>
-            </div>
+            
           </div>
           <div class="text-section">
             <div class="text">
               {{ submission.content }}
             </div>
           </div>
+          <div class="vote-section">
+            <div class="vote-button">
+              <i class="fa fa-thumbs-up"></i>
+            </div>
+            <div class="vote-button">
+              <i class="fa fa-thumbs-down"></i>
+            </div>
+          </div>
         </div>
+
       {% endfor %}
     </div>
 
     <div id="footer">
-      ODALC
+      <img id="odalc_logo" src="{% static 'media/odalc_logo_small.png' %}"></img>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
