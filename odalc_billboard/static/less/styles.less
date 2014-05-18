@@ -7,6 +7,7 @@
 @gray: #8c8c8c;
 @light_gray: #f1f2f0;
 @green: #137A0F;
+@light_yellow: #ffc652;
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -17,39 +18,47 @@ body {
 }
 
 #input-box {
-	padding: 0px 20px;
 	position: relative;
 	#message {
 		width: 80%;
 		font-size: 15px;
 		padding: 10px;
 		margin-top: 20px;
+		max-width: 500px;
 		text-align: center;
 		border: 1px solid rgb(220, 220, 220);
+		margin-bottom: 10px;
 
 		@media all and (max-width: 420px) {
 			width: 100%;
 			box-sizing: border-box;
-			// margin-left: 10px;
-			// padding-left: 0;
-			// padding: 0;
+			margin-bottom: 0;
+			font-size: 13px;
+			padding: 7px;
 		}
 	}
 
 	input#submit{
 		display: block;
 	  background:none;
-	  border: 0;
-	  border-radius: 0;
-	  padding: 8px 15px;
+	  border: 1px solid rgb(202, 198, 198);
+	  border-radius: 1px;
+	  padding: 10px 17px;
 	  margin: 10px auto 0;
 	  font-size: 15px;
 	  background-color: @yellow;
 	  color: white;
 	  cursor: pointer;
-	  // &:hover {
-	  // 	opacity: 0.8;
-	  // }
+	  opacity: 0.9;
+	  &:hover {
+	  	opacity: 1;
+	  	border: 1px solid rgb(220, 220, 220);
+	  }
+
+	  @media all and (max-width: 420px) {
+			font-size: 13px;
+			padding: 8px 15px;
+		}
 	}
 }
 
