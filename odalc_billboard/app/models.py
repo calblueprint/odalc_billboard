@@ -22,6 +22,7 @@ class SubmissionManager(models.Manager):
 class Submission(models.Model):
     content = models.TextField(
         'Submission Content',
+        max_length=140,
     )
     points = models.IntegerField(
         'Submission Points',
@@ -33,6 +34,9 @@ class Submission(models.Model):
     )
 
     objects = SubmissionManager()
+
+    def __unicode__(self):
+        return 'ID %d @ %s | %d POINTS' % (self.id, self.submitted, self.points)
 
     class Meta:
         ordering = ['-submitted']

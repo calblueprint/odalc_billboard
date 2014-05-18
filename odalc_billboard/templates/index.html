@@ -58,13 +58,13 @@
       </div>
     </div>
 
-    <div id="posts">      
+    <div id="posts">
       {% for submission in submissions %}
-        <div class="post">
+        <div id="{{ submission.id }}" class="post">
           <div class="ribbon">
             {{ submission.points }}
           </div>
-          <div class="points-section">            
+          <div class="points-section">
           </div>
           <div class="text-section">
             <div class="text">
@@ -73,14 +73,13 @@
           </div>
           <div class="vote-section">
             <div class="vote-button">
-              <i class="fa fa-thumbs-up"></i>
+              <i class="fa fa-thumbs-up vote-up" id="{{ submission.id }}_up"></i>
             </div>
             <div class="vote-button">
-              <i class="fa fa-thumbs-down"></i>
+              <i class="fa fa-thumbs-down vote-down" id="{{ submission.id }}_down"></i>
             </div>
           </div>
         </div>
-
       {% endfor %}
     </div>
 
@@ -90,5 +89,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{% static "js/app.js" %}"></script>
   </body>
 </html>
