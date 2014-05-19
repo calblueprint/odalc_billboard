@@ -20,6 +20,7 @@ body {
 #input-box {
 	position: relative;
 	#message {
+		font-family: Roboto;
 		width: 80%;
 		font-size: 15px;
 		padding: 10px;
@@ -66,58 +67,68 @@ body {
 	padding: 20px 10px 0;
 	text-align: center;
 	.post {
+		display: table;
+		position: relative;
+		width: 100%;
+		max-width: 500px;
+
 		background-color: white;
-		width: 400px;
 		margin: auto;
 		border-radius: 5px;
-		margin-bottom: 20px;
-		position: relative;
+		margin-bottom: 20px;		
 		min-height: 64px;
 
 		@media all and (max-width: 420px) {
 			width: 100%;
 		}
+		.date {
+			font-size: 11px;
+			position: absolute;
+			bottom: 5px;
+			left: 6px;
+			color: gray;
+
+		}
 		.points-section {
-			display: inline-block;
-			width: 15px;
+			display: table-cell;
+
+			width: 42px;
 			box-sizing: border-box;
-			.vote-buttons {				
-				width: 100%;
-				.vote-button {
-					border-top: 1px solid gray;
-					padding: 5px;
-					width: 50%;
-					font-size: 20px;
-					cursor: pointer;
-					&:hover {
-						color: @yellow;
-					}
-				}
-			}
+			font-size: 11px;
+			padding-top: 44px;
+			margin-left: -13px;
+			color: gray;
 		}
 		.text-section {
-			width: 330px;
+			display: table-cell;
+
+			padding: 12px 12px;
+			box-sizing: border-box;
+			font-size: 14px;
+			vertical-align: top;
 			@media all and (max-width: 420px) {
-				font-size: 13px;
+				font-size: 12px;
 				width: calc(100% - 35px);
 				width: -webkit-calc(100% - 35px);
 				width: -moz-calc(100% - 35px);
 				width: 75%;
-			}
-			padding: 12px 12px;
-			box-sizing: border-box;
-			display: inline-block;
-			font-size: 14px;
+			}			
 		}
 		.vote-section {
-			display: inline-block;
+			padding-right: 7px;
+			display: table-cell;
+
 			vertical-align: top;
-			margin-top: 3px;
-			width: 20px;
-			font-size: 22px;
+			margin-top: 3px;			
+			font-size: 25px;
 			.vote-button {
 				cursor: pointer;
 				color: @gray;
+				height: 28px;
+
+				.fa-thumbs-up {
+					line-height: 20px;
+				}
 				.fa-thumbs-up:hover, .fa-thumbs-up.clicked { color: @green; }
 				.fa-thumbs-down:hover, .fa-thumbs-down.clicked { color: rgb(209, 24, 24); }
 			}
