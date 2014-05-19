@@ -62,15 +62,15 @@
 
     <div id="posts">
       <div id="navigation">
-        <div class="option selected">Hot</div>
-        <div class="option">Top</div>
-        <div class="option">New</div>
+        <div class="option selected"><i class="fa fa-fire"></i>Hot</div>
+        <div class="option"><i class="fa fa-star"></i>Top</div>
+        <div class="option"><i class="fa fa-clock-o"></i>New</div>
       </div>
 
       {% for submission in submissions %}
         {% with post_state=request.session|get_session:submission.id %}
         <div id="{{ submission.id }}" class="post">
-          <div class="date">{{ submission.submitted|date:"M d" }}</div>
+          <div class="date">{{ submission.submitted|date:"N d" }}</div>
           <div class="ribbon">
             {{ submission.points }}
           </div>
