@@ -61,6 +61,12 @@
 
 
     <div id="posts">
+      <div id="navigation">
+        <div class="option selected">Hot</div>
+        <div class="option">Top</div>
+        <div class="option">New</div>
+      </div>
+
       {% for submission in submissions %}
         {% with post_state=request.session|get_session:submission.id %}
         <div id="{{ submission.id }}" class="post">
