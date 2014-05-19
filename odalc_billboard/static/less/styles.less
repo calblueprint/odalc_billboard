@@ -8,6 +8,7 @@
 @light_gray: #f1f2f0;
 @green: #137A0F;
 @light_yellow: #ffc652;
+@blue: rgb(25, 119, 186);
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -75,11 +76,22 @@ body {
 	.option {
 		display: inline-block;
 		cursor: pointer;
-		&:not(:last-child) {
-			margin-right: 20px;
+		background-color: rgb(200, 200, 200);
+		padding: 5px;
+		color: white;
+		margin: 0;
+		// box-sizing: border-box;
+		.fa {
+			margin-right: 5px;
 		}
+		// &:not(:last-child) {
+		// 	margin-right: 20px;
+		// }
 		&.selected {
-			text-decoration: underline;
+			// color: @green;
+			// border: 1.5px solid @blue;
+			background-color: #2A92DD;
+			// box-shadow: 1px 1px 0px @blue;
 		}
 	}
 }
