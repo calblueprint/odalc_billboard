@@ -16,6 +16,8 @@ body {
 	padding-bottom: 60px;
 	background-color: @light_gray;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
 }
 
 #input-box {
@@ -41,6 +43,9 @@ body {
 	}
 
 	input#submit{
+		-webkit-appearance: none;
+    -moz-appearance: none;
+   	appearance: none;  
 		display: block;
 	  background:none;
 	  border: 1px solid rgb(202, 198, 198);
