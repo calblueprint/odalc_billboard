@@ -32,6 +32,9 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        context['is_hot'] = self.sort == SORT_HOT
+        context['is_top'] = self.sort == SORT_TOP
+        context['is_new'] = self.sort == SORT_NEW
         if self.sort == SORT_NEW:
             context['submissions'] = Submission.objects.all()
         elif self.sort == SORT_TOP:

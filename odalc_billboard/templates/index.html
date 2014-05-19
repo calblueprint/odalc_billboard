@@ -18,7 +18,7 @@
   <body>
     <div id="header">
       <div class="overlay"></div>
-      <div class="overlay-text">        
+      <div class="overlay-text">
         <div id="question">
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
@@ -62,9 +62,9 @@
 
     <div id="posts">
       <div id="navigation">
-        <div class="option selected"><i class="fa fa-fire"></i>Hot</div>
-        <div class="option"><i class="fa fa-star"></i>Top</div>
-        <div class="option"><i class="fa fa-clock-o"></i>New</div>
+        <a href="/"><div class="option {% if is_hot %}selected{% endif %}"><i class="fa fa-fire"></i>Hot</div></a>
+        <a href="/?sort=top"><div class="option {% if is_top %}selected{% endif %}"><i class="fa fa-star"></i>Top</div></a>
+        <a href="/?sort=new"><div class="option {% if is_new %}selected{% endif %}"><i class="fa fa-clock-o"></i>New</div></a>
       </div>
 
       {% for submission in submissions %}
@@ -75,11 +75,11 @@
             {{ submission.points }}
           </div>
           <div class="points-section">
-            
+
           </div>
           <div class="text-section">
             <div class="text">
-              {{ submission.content }}              
+              {{ submission.content }}
             </div>
           </div>
           <div class="vote-section">
