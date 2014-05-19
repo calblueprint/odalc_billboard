@@ -1,5 +1,4 @@
-import json
-
+from django.db.models import F
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, View
@@ -53,7 +52,7 @@ class AJAXVoteView(View):
         is_up = request.POST.get('isUpClicked') == 'true'
         is_down = request.POST.get('isDownClicked') == 'true'
         submission = Submission.objects.get(id=submission_id)
-        submission.points = submission.points + diff
+        submission.points = F('points') + diff
         submission.save()
         if is_up:
             request.session[str(submission.id)] = 1
@@ -62,5 +61,4 @@ class AJAXVoteView(View):
         else:
             request.session.pop(str(submission.id), None)
         request.session.modified = True
-        print request.session.items()
         return HttpResponse('')
