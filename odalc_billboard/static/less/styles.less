@@ -15,6 +15,7 @@ body {
 	margin: 0;
 	padding-bottom: 60px;
 	background-color: @light_gray;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #input-box {
@@ -50,10 +51,10 @@ body {
 	  background-color: @yellow;
 	  color: white;
 	  cursor: pointer;
-	  opacity: 0.9;
+	  opacity: 1;
 	  &:hover {
-	  	opacity: 1;
-	  	border: 1px solid rgb(220, 220, 220);
+	  	// opacity: 0.9;
+	  	border: 1px solid white;
 	  }
 
 	  @media all and (max-width: 420px) {
@@ -145,8 +146,8 @@ body {
 				.fa-thumbs-up {
 					line-height: 20px;
 				}
-				.fa-thumbs-up:hover, .fa-thumbs-up.clicked { color: @green; }
-				.fa-thumbs-down:hover, .fa-thumbs-down.clicked { color: rgb(209, 24, 24); }
+				.fa-thumbs-up.clicked { color: @green; }
+				.fa-thumbs-down.clicked { color: rgb(209, 24, 24); }
 			}
 		}
 	}
