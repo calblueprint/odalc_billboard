@@ -14,9 +14,8 @@ def epoch_seconds(date):
 
 class SubmissionManager(models.Manager):
     def sorted_hot(self, *args, **kwargs):
-        qs = self.get_query_set().filter(*args, **kwargs)
-        # TODO: Sort using reddit's "hot" algorithm
-        return sorted(qs, key=operator.attrgetter('content'))
+        qs = self.raw('SELECT * FROM app_submission a ORDER BY hot(a.points, a.submitted) DESC;')
+        return qs
 
 
 class Submission(models.Model):

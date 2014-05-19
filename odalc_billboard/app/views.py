@@ -11,6 +11,7 @@ SORT_HOT = 'hot'
 SORT_NEW = 'new'
 SORT_TOP = 'top'
 
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
@@ -21,13 +22,8 @@ class IndexView(TemplateView):
             if submission_form.is_valid():
                 submission_form.save()
                 return redirect(request.path)
-                print "Bad submission"
             else:
                 return self.render_to_response(self.get_context_data())
-                print "Bad submission"
-        elif '_donate' in request.POST:
-            #TODO: Stripe donations
-            pass
         else:
             return redirect(request.path)
 
