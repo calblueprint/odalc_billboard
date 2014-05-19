@@ -18,10 +18,7 @@
   <body>
     <div id="header">
       <div class="overlay"></div>
-      <div class="overlay-text">
-        <div id="prompt">
-          Each year, ODALC asks graphic design students to design a billboard answering the question
-        </div>
+      <div class="overlay-text">        
         <div id="question">
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
@@ -32,9 +29,12 @@
               <div><small class="error">{{ error }}</small><div>
             {% endfor %}
             {# Below is a manually rendered version of using 'submission_form.content' #}
-            <textarea id="message" name="content" placeholder="Let the world know your answer!"></textarea>
+            <textarea id="message" name="content" placeholder="Animated filler..."></textarea>
             <input type="submit" value="Submit" id="submit" name="_submission"/>
           </form>
+        </div>
+        <div id="prompt">
+          Each year, graphic design students from <b>Oakland Digital Literacy</b>'s INSPIRE program design billboards answering this question. Let the world know your answer!
         </div>
       </div>
 
@@ -50,27 +50,30 @@
             <input type="submit" value="Submit" id="submit">
           </form>
         </div>
-        <div id="prompt">
-          Each year, ODALC asks graphic design students to design a billboard that answers the question
-        </div>
         <div id="question">
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
+        <div id="prompt">
+          Each year, graphic design students from <b>Oakland Digital Literacy</b>'s INSPIRE program design billboards answering this question. Let the world know your answer!
+        </div>
       </div>
     </div>
+
 
     <div id="posts">
       {% for submission in submissions %}
         {% with post_state=request.session|get_session:submission.id %}
         <div id="{{ submission.id }}" class="post">
+          <div class="date">{{ submission.submitted|date:"M d" }}</div>
           <div class="ribbon">
             {{ submission.points }}
           </div>
           <div class="points-section">
+            
           </div>
           <div class="text-section">
             <div class="text">
-              {{ submission.content }}
+              {{ submission.content }}              
             </div>
           </div>
           <div class="vote-section">
@@ -88,11 +91,17 @@
 
     <div id="footer">
       <img id="odalc_logo" src="{% static 'media/odalc_logo_small.png' %}"></img>
+      <div id="donate-btn">Donate</div>
+      <div id="bp_logo_wrapper">
+        <div class="powered_by">Powered by</div>
+        <img id="bp_logo" src="{% static 'media/bp_logo_small.png' %}"></img>
+      </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/fast-click.js" %}"></script>
   </body>
 </html>

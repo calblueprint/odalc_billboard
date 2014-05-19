@@ -6,6 +6,33 @@
 	color: white;
 	text-shadow: 1px 0.5px 1px black;
 	position: relative;
+	#question {
+	  font-size: 26px;
+	  margin-bottom: 10px;
+	  @media all and (max-width: 420px) {
+	  	font-size: 20px;
+	  	margin-bottom: -5px;
+	  }  
+	  .oakland {
+		  font-weight: 600;
+		  font-size: 30px;
+		  @media all and (max-width: 420px) {
+		  	font-size: 24px;
+		  }  
+		}
+	}
+	#prompt {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 500px;
+		margin: auto;
+		margin-top: 20px;
+		@media all and (max-width: 420px) {
+	  	font-size: 12px;
+	  	line-height: 18px;
+	  	margin-top: 15px;
+	  }
+	}
 	.overlay {
 		height: 100%;
 		width: 100%;
@@ -15,26 +42,24 @@
 	}
 	.overlay-text {
 		text-align: center;
-		// width: 100%;
-		padding: 25px 20px;
+		padding: 35px 15px;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 10;
+		@media all and (max-width: 420px) {
+	  	font-size: 22px;
+	  	padding: 20px 15px;
+	  }
 	}
+
 	.overlay-text-2 {
 		visibility: hidden;
-		padding: 25px 20px;
-	}
-	#prompt {
-		font-size: 14px;
-		margin-bottom: 10px;
-	}
-	#question {
-	  font-size: 26px;	  
-	  .oakland {
-		  font-weight: 600;
-		}
-	}
+		padding: 35px 15px;
+		@media all and (max-width: 420px) {
+	  	font-size: 22px;
+	  	padding: 20px 15px;
+	  }
+	}	
 }
