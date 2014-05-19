@@ -12,17 +12,22 @@
 	#odalc_logo {
 		width: 75px;
 		margin-top: 4px;
+		cursor: pointer;
+		opacity: 0.8;
+		&:hover, &:active {
+			opacity: 1;
+		}
 	}
 	#donate-btn {
 		display: inline-block;
 		vertical-align: top;
-		margin-top: 14px;
+		margin-top: 12px;
 		margin-left: 5px;
 		font-size: 11.5px;
 		border: 1px solid rgb(167, 167, 167);
 		padding: 5px;
 		cursor: pointer;
-		color: rgb(220, 220, 220);
+		color: rgb(190, 190, 190);
 		&:hover {
 			border: 1px solid white;
 			color: white;
@@ -41,13 +46,16 @@
 			font-weight: 300;
 			vertical-align: middle;
 			height: 45px;
-			margin: 8px 5px 0;
+			margin: 7px 5px 0;
+			opacity: 0.8;
+			color: white;
 			@media all and (max-width: 420px) {
 		  	font-size: 11.5px;
 		  }
 		}
 		#bp_logo {
-			width: 30px;								
+			width: 30px;
+			cursor: pointer;
 		}
 	}
 }
