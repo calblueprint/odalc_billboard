@@ -27,7 +27,7 @@ class IndexView(TemplateView):
             return redirect(request.path)
 
     def dispatch(self, request, *args, **kwargs):
-        self.sort = request.GET.get('sort', SORT_HOT)
+        self.sort = request.GET.get('sort', SORT_TOP)
         return super(IndexView, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
