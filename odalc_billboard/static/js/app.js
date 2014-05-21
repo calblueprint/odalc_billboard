@@ -81,4 +81,10 @@ $(document).ready(function() {
             },
         });
     });
+
+    $("#bp_logo_wrapper").mouseover(function() {
+        $("#bp_logo").addClass("rotate");
+    }).mouseout(function() {
+        $("#bp_logo").removeClass("rotate");
+    });
 });
