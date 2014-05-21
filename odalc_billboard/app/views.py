@@ -19,8 +19,9 @@ class IndexView(TemplateView):
         submission_form = context['submission_form']
         if '_submission' in request.POST:
             if submission_form.is_valid():
-                submission_form.save()
-                return redirect(request.path)
+                submission = submission_form.save()
+                request.session[str(submission.id)] = 1
+                return redirect('/?sort=new')
             else:
                 return self.render_to_response(self.get_context_data())
         else:
