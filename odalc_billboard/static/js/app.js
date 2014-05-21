@@ -82,9 +82,9 @@ $(document).ready(function() {
         });
     });
 
-    $("#bp_logo_wrapper").mouseover(function() {
-        $("#bp_logo").addClass("rotate");
+    $("#bp-wrapper").mouseover(function() {
+        $("#bp-logo").addClass("rotate");
     }).mouseout(function() {
-        $("#bp_logo").removeClass("rotate");
+        $("#bp-logo").removeClass("rotate");
     });
 });

@@ -19,6 +19,7 @@ body {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-moz-tap-highlight-color: rgba(0,0,0,0);
 	tap-highlight-color: rgba(0,0,0,0);
+    overflow-x:hidden;
 }
 
 #input-box {
@@ -164,49 +165,6 @@ body {
 		}
 	}
 }
-
-.spin-now {
-    -webkit-transform: rotate(360deg);
-       -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-}
-
-.rotate {
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-
-    overflow:hidden;
-    -webkit-transform:rotate(360deg);
-    -moz-transform:rotate(360deg);
-    -o-transform:rotate(360deg);
-}
-
-.rotate-reverse {
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-
-    overflow:hidden;
-    -webkit-transform:rotate(-360deg);
-    -moz-transform:rotate(-360deg);
-    -o-transform:rotate(-360deg);
-}
-
 .spinner {
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
        -moz-transition:    -moz-transform 0.5s ease-in-out;
