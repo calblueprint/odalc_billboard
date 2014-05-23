@@ -23,14 +23,17 @@
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
         <div id="input-box">
-          <form method="POST">
+          <form id="submission-form" method="POST">
             {% csrf_token %}
             {% for error in submission_form.content.errors %}
               <div><small class="error">{{ error }}</small><div>
             {% endfor %}
             {# Below is a manually rendered version of using 'submission_form.content' #}
             <textarea id="message" name="content" maxlength="100" placeholder="Let the world know your answer!"></textarea>
-            <div id="char-length">100</div>
+            <div id="validation">
+                <span id="char-length">100</span>
+                <span id="error"></span>
+            </div>
             <input type="submit" value="Submit" id="submit" name="_submission"/>
           </form>
         </div>

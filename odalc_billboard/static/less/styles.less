@@ -23,16 +23,21 @@ body {
     overflow-x:hidden;
 }
 
-#char-length {
+#validation {
     max-width: 500px;
     width: 80%;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
     height: 0;
+    clear: both;
     @media all and (max-width: 420px) {
         width: 100%;
         font-size: 13px;
+    }
+    #char-length {
+    }
+    #error {
     }
 }
 
@@ -58,7 +63,7 @@ body {
 		}
 	}
 
-	input#submit{
+	input#submit {
 		-webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -75,6 +80,13 @@ body {
         opacity: 1;
         &:hover {
             border: 1px solid white;
+        }
+        &:disabled {
+            opacity: 0.5;
+            &:hover {
+                border: 1px solid rgb(202, 198, 198);
+                cursor: default;
+            }
         }
 
 	    @media all and (max-width: 420px) {

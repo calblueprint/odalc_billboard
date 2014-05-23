@@ -106,6 +106,17 @@ $(document).ready(function() {
             }
         });
     })(jQuery);
+
     var elem = $("#char-length");
     $("#message").limiter(100, elem);
+
+    $('#submit').attr('disabled',true);
+    $('#message').keyup(function(){
+        if ($.trim($(this).val()).length != 0) {
+            $('#submit').attr('disabled', false);
+        }
+        else {
+            $('#submit').attr('disabled', true);
+        }
+    });
 });
