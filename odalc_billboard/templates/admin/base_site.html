@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+
+{% block branding %}
+<a href="{% url 'admin:index' %}"><h1 id="site-name">Inspire Oakland Administration</h1></a>
+{% endblock %}
+
+{% block userlinks %}
+{{ block.super }}
+<!-- Don't know where in the code Django adds these <li> tags automagically, but it does, so add it manually here -->
+<li class="divider-vertical"></li>
+<li><a href="{% url 'home' %}">Return to Inspire Oakland Site</a></li>
+{% endblock %}

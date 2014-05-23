@@ -116,6 +116,8 @@ ROOT_URLCONF = 'odalc_billboard.urls'
 WSGI_APPLICATION = 'odalc_billboard.wsgi.application'
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
