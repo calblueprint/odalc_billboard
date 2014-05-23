@@ -158,6 +158,7 @@ $(document).ready(function() {
         var tweetBtn = $('<a></a>')
             .addClass('twitter-share-button')
             .attr('href', 'http://twitter.com/share')
+            .attr('data-size', 'large')
             .attr('data-url', $(location).attr('hostname'))
             .attr('data-text', "What about Oakland inspires me? " + $('#message').val() + " @ODALC");
         $('#tweet-wrapper').append(tweetBtn);
