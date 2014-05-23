@@ -10,6 +10,8 @@ class SubmissionAdmin(admin.ModelAdmin):
     list_display = ['content', 'points', 'submitted']
     readonly_fields = ['content', 'points', 'submitted']
 
+    def has_add_permission(self, request):
+        return False
 
 admin.site.register(Submission, SubmissionAdmin)
 admin.site.unregister(User)
