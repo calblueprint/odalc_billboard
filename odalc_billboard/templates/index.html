@@ -2,12 +2,18 @@
 {% load less %}
 {% load template_extras %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oakland Digital</title>
+
+    <link rel="shortcut icon" href="{% static "media/odalc_16px.ico" %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static "media/ODALC-16px.png" %}" type="image/png"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static "media/ODALC-57px.png" %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static "media/ODALC-72px.png" %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static "media/ODALC-117px.png" %}">
 
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" />
@@ -34,7 +40,8 @@
                 <span id="char-length">100</span>
                 <span id="error"></span>
             </div>
-            <input type="submit" value="Submit" id="submit" name="_submission"/>
+            <input type="hidden" name="_submission" value="Submit"/>
+            <input type="submit" value="Submit" id="submit"/>
           </form>
         </div>
         <div id="prompt">

@@ -150,12 +150,6 @@ $(document).ready(function() {
             data: $(this).serialize(), // get the form data
             type: $(this).attr('method'), // GET or POST
             url: $(this).attr('action'), // the file to call
-            success: function(response) { // on success..
-                console.log('submit');
-                console.log(response);
-                console.log('submit');
-                $('#error').text('yay!'); // update the DIV
-            }
         });
 
         // Remove existing iframe
@@ -171,6 +165,7 @@ $(document).ready(function() {
 
         $('#success-modal').dialog('open');
 
+        // Prevent non-AJAX POST request from happening
         return false;
     });
 });

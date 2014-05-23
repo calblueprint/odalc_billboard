@@ -118,23 +118,35 @@ body {
     display: none !important;
 }
 
-.ui-dialog-buttonset {
-	font-family: 'Roboto', sans-serif !important;
-    .ui-button {
-        margin: 0.7em 3.3em 0.5em 0.5em !important;
-        border: 1px solid rgb(202, 198, 198);
-        border-radius: 1px !important;
-        padding: 10px 17px;
-        margin: 10px auto 0;
-        font-size: 15px;
-        background: none;
-        background-color: @green;
-        color: white;
-        cursor: pointer;
-        opacity: 0.8;
-        &:hover {
-            border: 1px solid white;
-            opacity: 1;
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+}
+
+.ui-dialog-buttonpane {
+    padding: 0.5em !important;
+    margin-bottom: 10px;
+    .ui-dialog-buttonset {
+        font-family: 'Roboto', sans-serif !important;
+        margin: 10px auto 0 !important;
+        width: 100%;
+        .ui-button {
+            appearance: none;
+            display: block;
+            background:none;
+            border: 1px solid rgb(202, 198, 198) !important;
+            border-radius: 1px !important;
+            padding: 10px 17px;
+            margin: 10px auto 0 !important;
+            font-size: 15px;
+            background: none;
+            background-color: @green;
+            color: white;
+            cursor: pointer;
+            opacity: 0.8;
+            &:hover {
+                border: 1px solid white !important;
+                opacity: 1;
+            }
         }
     }
 }

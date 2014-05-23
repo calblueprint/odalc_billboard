@@ -18,7 +18,6 @@ class IndexView(TemplateView):
         context = self.get_context_data(**kwargs)
         submission_form = context['submission_form']
         if '_submission' in request.POST:
-            print request.POST
             if submission_form.is_valid():
                 submission = submission_form.save()
                 request.session[str(submission.id)] = 1
