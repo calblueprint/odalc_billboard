@@ -22,6 +22,19 @@ body {
     overflow-x:hidden;
 }
 
+#char-length {
+    max-width: 500px;
+    width: 80%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    height: 0;
+    @media all and (max-width: 420px) {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
 #input-box {
 	position: relative;
 	#message {
@@ -46,24 +59,24 @@ body {
 
 	input#submit{
 		-webkit-appearance: none;
-    -moz-appearance: none;
-   	appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 		display: block;
-	  background:none;
-	  border: 1px solid rgb(202, 198, 198);
-	  border-radius: 1px;
-	  padding: 10px 17px;
-	  margin: 10px auto 0;
-	  font-size: 15px;
-	  background-color: @yellow;
-	  color: white;
-	  cursor: pointer;
-	  opacity: 1;
-	  &:hover {
-	  	border: 1px solid white;
-	  }
+        background:none;
+        border: 1px solid rgb(202, 198, 198);
+        border-radius: 1px;
+        padding: 10px 17px;
+        margin: 10px auto 0;
+        font-size: 15px;
+        background-color: @yellow;
+        color: white;
+        cursor: pointer;
+        opacity: 1;
+        &:hover {
+            border: 1px solid white;
+        }
 
-	  @media all and (max-width: 420px) {
+	    @media all and (max-width: 420px) {
 			font-size: 13px;
 			padding: 8px 15px;
 		}

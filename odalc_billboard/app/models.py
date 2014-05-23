@@ -21,7 +21,7 @@ class SubmissionManager(models.Manager):
 class Submission(models.Model):
     content = models.TextField(
         'Submission Content',
-        max_length=140,
+        max_length=100,
     )
     points = models.IntegerField(
         'Submission Points',

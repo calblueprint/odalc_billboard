@@ -29,7 +29,8 @@
               <div><small class="error">{{ error }}</small><div>
             {% endfor %}
             {# Below is a manually rendered version of using 'submission_form.content' #}
-            <textarea id="message" name="content" placeholder="Let the world know your answer!"></textarea>
+            <textarea id="message" name="content" maxlength="100" placeholder="Let the world know your answer!"></textarea>
+            <div id="char-length">100</div>
             <input type="submit" value="Submit" id="submit" name="_submission"/>
           </form>
         </div>
@@ -40,18 +41,15 @@
 
       <!--LOL HACK-->
       <div class="overlay-text-2">
+        <div id="question">
+          WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
+        </div>
         <div id="input-box">
           <form method="POST">
             {% csrf_token %}
-            {% for error in submission_form.content.errors %}
-              <div><small class="error">{{ error }}</small><div>
-            {% endfor %}
             <textarea id="message" name="" placeholder="Let the world know your answer!"></textarea>
             <input type="submit" value="Submit" id="submit">
           </form>
-        </div>
-        <div id="question">
-          WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
         <div id="prompt">
             Each year, graphic design students from Oakland Digital's INSPIRE program design billboards answering this question. The collection of INSPIRE designs our students produce each year represent the rich diversity, history, and resiliency of our community.
