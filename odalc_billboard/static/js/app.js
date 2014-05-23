@@ -106,7 +106,6 @@ $(document).ready(function() {
             }
         });
     })(jQuery);
-
     var elem = $("#char-length");
     $("#message").limiter(100, elem);
 
@@ -118,5 +117,60 @@ $(document).ready(function() {
         else {
             $('#submit').attr('disabled', true);
         }
+    });
+
+    $(function() {
+        $( "#success-modal" ).dialog({
+            modal: true,
+            autoOpen: false,
+            resizable: false,
+            draggable: false,
+            dialogClass: "modal-style",
+            buttons: {
+                "Return to Page": function() {
+                    $( this ).dialog( "close" );
+                },
+            },
+            open: function() {
+                $('.ui-widget-overlay').addClass('modal-overlay');
+                $("body").css({ overflow: 'hidden' })
+            },
+            close: function() {
+                $('.ui-widget-overlay').removeClass('modal-overlay');
+                location.href = '/?sort=new';
+            },
+            beforeClose: function(event, ui) {
+                $("body").css({ overflow: 'inherit' })
+            },
+        });
+    });
+
+    $('#submission-form').submit(function() { // catch the form's submit event
+        $.ajax({ // create an AJAX call...
+            data: $(this).serialize(), // get the form data
+            type: $(this).attr('method'), // GET or POST
+            url: $(this).attr('action'), // the file to call
+            success: function(response) { // on success..
+                console.log('submit');
+                console.log(response);
+                console.log('submit');
+                $('#error').text('yay!'); // update the DIV
+            }
+        });
+
+        // Remove existing iframe
+        $('#tweet-wrapper iframe').remove();
+        // Generate new markup
+        var tweetBtn = $('<a></a>')
+            .addClass('twitter-share-button')
+            .attr('href', 'http://twitter.com/share')
+            .attr('data-url', $(location).attr('hostname'))
+            .attr('data-text', "What about Oakland inspires me? " + $('#message').val() + " @ODALC");
+        $('#tweet-wrapper').append(tweetBtn);
+        twttr.widgets.load();
+
+        $('#success-modal').dialog('open');
+
+        return false;
     });
 });

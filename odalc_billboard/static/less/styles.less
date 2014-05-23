@@ -96,6 +96,49 @@ body {
 	}
 }
 
+#success-modal {
+	font-family: 'Roboto', sans-serif !important;
+    p {
+        font-size: 13px;
+    }
+}
+
+.modal-style {
+    position: fixed;
+    margin: 0 auto;
+}
+
+.modal-overlay {
+    background-color: @billboard-black;
+    background-image: none;
+    opacity: 0.7;
+}
+
+.ui-dialog-titlebar {
+    display: none !important;
+}
+
+.ui-dialog-buttonset {
+	font-family: 'Roboto', sans-serif !important;
+    .ui-button {
+        margin: 0.7em 3.3em 0.5em 0.5em !important;
+        border: 1px solid rgb(202, 198, 198);
+        border-radius: 1px !important;
+        padding: 10px 17px;
+        margin: 10px auto 0;
+        font-size: 15px;
+        background: none;
+        background-color: @green;
+        color: white;
+        cursor: pointer;
+        opacity: 0.8;
+        &:hover {
+            border: 1px solid white;
+            opacity: 1;
+        }
+    }
+}
+
 #navigation {
 	margin-bottom: 15px;
 	font-size: 13px;
