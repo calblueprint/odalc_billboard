@@ -1,10 +1,11 @@
 from django.db.models import F
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, View
 
 from odalc_billboard.app.models import Submission
 from odalc_billboard.app.forms import SubmissionForm
+
 
 SORT_HOT = 'hot'
 SORT_NEW = 'new'
@@ -17,6 +18,10 @@ class IndexView(TemplateView):
     def post(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
         submission_form = context['submission_form']
+        print request.POST
+        if request.POST.get('content-validator') != u'':
+            # if content-validator is not empty, then it's a bot
+            raise Http404("You done goofed.")
         if '_submission' in request.POST:
             if submission_form.is_valid():
                 submission = submission_form.save()

@@ -16,21 +16,21 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static "media/ODALC-117px.png" %}">
 
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ STATIC_URL }}{% less "less/styles.less" %}" />
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/odalc-billboard-media/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/odalc-billboard-media/css/styles.css" />
   </head>
 
   <body>
     <div id="header">
+      <form id="submission-form" method="POST">
+      {% csrf_token %}
       <div class="overlay"></div>
       <div class="overlay-text">
         <div id="question">
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
         <div id="input-box">
-          <form id="submission-form" method="POST">
-            {% csrf_token %}
             {% for error in submission_form.content.errors %}
               <div><small class="error">{{ error }}</small><div>
             {% endfor %}
@@ -42,7 +42,6 @@
             </div>
             <input type="hidden" name="_submission" value="Submit"/>
             <input type="submit" value="Submit" id="submit"/>
-          </form>
         </div>
         <div id="prompt">
             Each year, graphic design students from Oakland Digital's INSPIRE program design billboards answering this question. The collection of INSPIRE designs our students produce each year represent the rich diversity, history, and resiliency of our community.
@@ -55,16 +54,14 @@
           WHAT ABOUT <span class="oakland">OAKLAND</span> INSPIRES YOU?
         </div>
         <div id="input-box">
-          <form method="POST">
-            {% csrf_token %}
-            <textarea id="message" name="" placeholder="Let the world know your answer!"></textarea>
+            <textarea id="message" name="content-validator" placeholder="Let the world know your answer!"></textarea>
             <input type="submit" value="Submit" id="submit">
-          </form>
         </div>
         <div id="prompt">
             Each year, graphic design students from Oakland Digital's INSPIRE program design billboards answering this question. The collection of INSPIRE designs our students produce each year represent the rich diversity, history, and resiliency of our community.
         </div>
       </div>
+      </form>
     </div>
 
     <div id="success-modal" title="Basic modal dialog">

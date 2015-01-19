@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'static_precompiler',
     'odalc_billboard.app',
+    'gunicorn'
 )
 
 # A sample logging configuration. The only tangible logging
